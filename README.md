@@ -1,30 +1,80 @@
 # My Teacher Agent
 
-Um agente opencode para ensino de programação com progressão automática de carreira.
+Agentes opencode para aprendizado e ensino de programação.
 
-## Sobre
+## Agentes disponíveis
 
-O **Teacher Agent** é um professor IA que ensina qualquer linguagem, framework ou conceito de programação seguindo um fluxo pedagógico completo:
+### Teacher (`@teacher`)
+
+Agente de aprendizado generalista com progressão automática de carreira. Ensina qualquer linguagem, framework ou conceito.
 
 - **7 fases** de aprendizado — do "Hello World" à autonomia total
-- **6 abordagens** específicas por tipo de conteúdo (linguagem nova, conceito, framework, algoritmo, debug, boas práticas)
-- **Progressão automática** de carreira: 🟢 Iniciante → 🔵 Júnior → 🟡 Pleno → 🔴 Sênior
-- **Persistência** de progresso entre sessões (`.teacher-progress.json`)
-- **Anti-patterns** proativos com 13 erros clássicos mapeados
+- **6 abordagens** específicas (linguagem nova, conceito, framework, algoritmo, debug, boas práticas)
+- **Progressão automática:** 🟢 Iniciante → 🔵 Júnior → 🟡 Pleno → 🔴 Sênior
+- **Persistência** de progresso entre sessões via `.teacher-progress.json`
 - **Dificuldade adaptativa** em tempo real
-- **Leitura de código** como skill separada de escrita
+
+### Professor API (`@professor-api`)
+
+Agente especializado em **ensinar construção de APIs do zero**. Guia o aluno passo a passo como em uma aula particular, independente da tecnologia.
+
+- **Diagnóstico** do projeto (e-commerce, ERP, etc.) e nível de experiência
+- **Mapeamento de requisitos** e modelagem de dados
+- **Escolha tecnológica guiada** com comparação de linguagens, frameworks e bancos
+- **Arquitetura** (camadas, injeção de dependência, DTOs, Clean Architecture)
+- **Implementação incremental** — teoria antes do código, linha por linha
+- **Boas práticas:** testes, validação, erros, logs, autenticação, Docker
+
+## Instalação
+
+### Via script (recomendado)
+
+```bash
+git clone https://github.com/RobertoBarbosa-AurTTY/my_teacher_agent.git
+cd my_teacher_agent
+
+# Instala globalmente (disponível em qualquer projeto)
+./install.ps1                        # PowerShell
+./install.sh                         # bash
+
+# Apenas no projeto atual
+./install.ps1 -Scope local
+./install.sh local
+
+# Instala + define como agente padrão
+./install.ps1 -Scope global -SetDefault
+./install.sh global professor-api --default
+```
+
+### Manual
+
+Copie o arquivo do agente desejado para o diretório de agentes do opencode:
+
+| Escopo | Diretório |
+|--------|-----------|
+| Global (todo projeto) | `~/.config/opencode/agents/` (Linux/Mac) |
+| Global (Windows) | `%USERPROFILE%\.config\opencode\agents\` |
+| Local (projeto atual) | `.opencode/agents/` |
 
 ## Como usar
 
-1. Copie `.opencode/agents/teacher.md` para o diretório de agentes do seu projeto opencode
-2. No chat, ative o agente com `@teacher` ou simplesmente peça "quero aprender [assunto]"
-3. O agente fará um diagnóstico inicial e começará o passo a passo
-
-## Estrutura
+No chat do opencode, ative o agente desejado:
 
 ```
-.opencode/agents/teacher.md   — agente principal (registrado no opencode)
-agents/teacher.md             — versão standalone sem frontmatter
+@teacher Quero aprender Python do zero
+@professor-api Quero construir um e-commerce
+```
+
+## Estrutura do repositório
+
+```
+.opencode/agents/
+├── professor-api.md   — agente especialista em APIs
+└── teacher.md         — agente generalista
+agents/
+└── teacher.md         — versão standalone do teacher (sem frontmatter)
+install.ps1            — instalador para Windows (PowerShell)
+install.sh             — instalador para Linux/Mac (bash)
 ```
 
 ## Licença
