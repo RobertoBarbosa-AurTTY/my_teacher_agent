@@ -14,7 +14,7 @@ Agente de aprendizado generalista com progressão automática de carreira. Ensin
 - **Persistência** de progresso entre sessões via `.teacher-progress.json`
 - **Dificuldade adaptativa** em tempo real
 
-### Professor API (`@professor-api`)
+### Professor API (`@teacher-api`)
 
 Agente especializado em **ensinar construção de APIs do zero**. Guia o aluno passo a passo como em uma aula particular, independente da tecnologia.
 
@@ -43,7 +43,7 @@ cd my_teacher_agent
 
 # Instala + define como agente padrão
 ./install.ps1 -Scope global -SetDefault
-./install.sh global professor-api --default
+./install.sh global teacher-api --default
 ```
 
 ### Manual
@@ -62,14 +62,14 @@ No chat do opencode, ative o agente desejado:
 
 ```
 @teacher Quero aprender Python do zero
-@professor-api Quero construir um e-commerce
+@teacher-api Quero construir um e-commerce
 ```
 
 ## Estrutura do repositório
 
 ```
 .opencode/agents/
-├── professor-api.md   — agente especialista em APIs
+├── teacher-api.md   — agente especialista em APIs
 └── teacher.md         — agente generalista
 agents/
 └── teacher.md         — versão standalone do teacher (sem frontmatter)

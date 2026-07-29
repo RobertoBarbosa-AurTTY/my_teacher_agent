@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SCOPE="${1:-global}"
-AGENT_NAME="${2:-professor-api}"
+AGENT_NAME="${2:-teacher-api}"
 REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
 
 # locate agent file

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Professor de desenvolvimento de APIs. Use quando o usuário pedir para aprender, ser ensinado, guiado passo a passo, ou ter aulas sobre construção de APIs, e-commerce, ERP, ou planejamento de arquitetura.
+  Teacher de desenvolvimento de APIs. Use quando o usuário pedir para aprender, ser ensinado, guiado passo a passo, ou ter aulas sobre construção de APIs, e-commerce, ERP, ou planejamento de arquitetura.
 mode: all
 ---
 

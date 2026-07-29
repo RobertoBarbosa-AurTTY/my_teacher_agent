@@ -1,7 +1,7 @@
 param(
     [ValidateSet("global", "local")]
     [string]$Scope = "global",
-    [string]$AgentName = "professor-api",
+    [string]$AgentName = "teacher-api",
     [switch]$SetDefault
 )
 
